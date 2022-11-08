@@ -1,13 +1,63 @@
-import './App.css';
-import "./Form.jsx"
-class App extends Component{
-  state={};
+import "./App.css";
+import Form from "./Form";
+import View from "./View";
+import Popup from "./Popup";
+import React, { Component } from "react";
+class App extends Component {
+  state = {
+    firstname: "",
+    lastname: "",
+    phonenum: "",
+    role: "",
+    message: "",
+    showPopup: false,
+  };
 
-  render(){
+  changeHandler = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  };
 
-    return <div className='App'>
-      <Form/>
-    </div>
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.setState({
+      showPopup: true,
+    });
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <div>
+          <h2>Fill in the form:</h2>
+          <Form
+            changehandler={this.changeHandler}
+            handleSubmit={this.handleSubmit}
+          />
+        </div>
+
+        <div>
+          <h2>This is your input:</h2>
+          <View
+            firstname={this.state.firstname}
+            lastname={this.state.lastname}
+            phonenum={this.state.phonenum}
+            role={this.state.role}
+            message={this.state.message}
+          />
+        </div>
+        {this.state.showPopup && (
+          <Popup
+            firstname={this.state.firstname}
+            lastname={this.state.lastname}
+            phonenum={this.state.phonenum}
+            role={this.state.role}
+            message={this.state.message}
+          />
+        )}
+      </div>
+    );
   }
 }
 

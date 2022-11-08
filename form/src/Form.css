@@ -1,0 +1,18 @@
+.container{
+    background: rgba(234, 232, 232, 0.738);
+    max-width: 50%;
+}
+form{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+input{
+    margin-left: 1em;
+}
+button{
+max-width: 30%;
+margin-left: 5em;
+}
