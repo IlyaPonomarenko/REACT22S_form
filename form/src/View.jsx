@@ -2,6 +2,7 @@ import "./View.css";
 
 const View = (props) => {
     return <div className="container">
+        <div className="middle">
         <label> First Name:
             <p>{props.firstname}</p>
         </label>
@@ -17,6 +18,7 @@ const View = (props) => {
         <label> Message
             <p>{props.message}</p>
         </label>
+        </div>
     </div>
 }
 export default View;
