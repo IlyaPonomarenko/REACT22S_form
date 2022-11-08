@@ -8,7 +8,7 @@ class App extends Component {
     firstname: "",
     lastname: "",
     phonenum: "",
-    role: "",
+    role: "student",
     message: "",
     showPopup: false,
   };
@@ -25,6 +25,14 @@ class App extends Component {
       showPopup: true,
     });
   };
+  handleClose = () =>{
+    this.setState({
+      showPopup:false,
+    })
+  }
+  handleRefresh = () =>{
+    window.location.reload(false);
+  }
 
   render() {
     return (
@@ -54,6 +62,8 @@ class App extends Component {
             phonenum={this.state.phonenum}
             role={this.state.role}
             message={this.state.message}
+            handleClose={this.handleClose}
+            handleRefresh={this.handleRefresh}
           />
         )}
       </div>
