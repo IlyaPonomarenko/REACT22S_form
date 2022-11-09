@@ -2,7 +2,7 @@ import "./Popup.css";
 
 const Popup = (props) =>{
 return <div className="popup">
-    <h2>Your data:</h2>
+     <h2 className="data">Your data:</h2>
         <label> First Name:
             <p>{props.firstname}</p>
         </label>
@@ -15,7 +15,7 @@ return <div className="popup">
         <label> Role:
             <p>{props.role}</p>
         </label>
-        <label> Message
+        <label> Message:
             <p>{props.message}</p>
         </label>
         <div className="btns">

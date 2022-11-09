@@ -1,17 +1,40 @@
 .popup{
     padding: 30px;
     color: white;
-    background-color: #003049;
     border: 2px solid rgba(0,0,0,.05);
     border-radius: 20px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.557);
+    -webkit-transition: 0.5s;
+    overflow: auto;
+    transition: all 0.3s linear;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
 }
 p{
     color: white;
 }
 label{
     color: white;
+}
+.data{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.btns{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-right: 8em;
 }
