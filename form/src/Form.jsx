@@ -6,11 +6,21 @@ const Form = (props) => {
       <form action="submit">
         <label>
           {"First Name "}
-          <input type="text" className="textInp" name="firstname" onChange={props.changehandler} />
+          <input
+            type="text"
+            className="textInp"
+            name="firstname"
+            onChange={props.changehandler}
+          />
         </label>
         <label>
           {"Last Name "}
-          <input type="text" className="textInp" name="lastname" onChange={props.changehandler} />
+          <input
+            type="text"
+            className="textInp"
+            name="lastname"
+            onChange={props.changehandler}
+          />
         </label>
 
         <label>

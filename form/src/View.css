@@ -1,25 +1,25 @@
-.container{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-left: 5em;
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 5em;
 }
-.middle{
-    color: white;
-    text-align: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
+.middle {
+  color: white;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
 }
-label{
-    display: flex;
-    flex-direction: row;
-    margin: 1em;
-    color: white;
+label {
+  display: flex;
+  flex-direction: row;
+  margin: 1em;
+  color: white;
 }
-p{
-    margin: 0;
-    margin-left: 10px;
-    color: white;
+p {
+  margin: 0;
+  margin-left: 10px;
+  color: white;
 }

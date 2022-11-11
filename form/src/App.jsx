@@ -25,14 +25,14 @@ class App extends Component {
       showPopup: true,
     });
   };
-  handleClose = () =>{
+  handleClose = () => {
     this.setState({
-      showPopup:false,
-    })
-  }
-  handleRefresh = () =>{
+      showPopup: false,
+    });
+  };
+  handleRefresh = () => {
     window.location.reload(false);
-  }
+  };
 
   render() {
     return (
