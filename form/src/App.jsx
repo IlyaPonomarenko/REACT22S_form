@@ -3,76 +3,76 @@ import Form from "./Form";
 import View from "./View";
 import Popup from "./Popup";
 import Notes from "./Notes";
-import React, { Component } from "react";
-class App extends Component {
-  state = {
+import React, { useState } from "react";
+import axios from "axios";
+
+const App = () => {
+  const [state, setState] = useState({
     firstname: "",
     lastname: "",
     phonenum: "",
     role: "student",
     message: "",
-    showPopup: false,
+  });
+  const [showPopup, setPopup] = useState(false);
+  const changeHandler = (event) => {
+    const value = event.target.value;
+    setState({ ...state, [event.target.name]: value });
   };
 
-  changeHandler = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
-  };
-
-  handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    this.setState({
-      showPopup: true,
-    });
+    setPopup(true);
   };
-  handleClose = () => {
-    this.setState({
-      showPopup: false,
-    });
+  const handleClose = () => {
+    setPopup(true);
   };
-  handleRefresh = () => {
-    window.location.reload(false);
+  const sendData = () => {
+    axios
+      .post("http://localhost:3001/notes", {
+        firstname: state.firstname,
+        lastname: state.lastname,
+        phonenum: state.phonenum,
+        role: state.role,
+        message: state.message,
+      })
+      .then((res) => console.log(res))
+      .catch((error) => console.log(error));
   };
 
-  render() {
-    return (
-      <div className="App">
-        <div>
-          <h2>Fill in the form:</h2>
-          <Form
-            changehandler={this.changeHandler}
-            handleSubmit={this.handleSubmit}
-          />
-        </div>
-
-        <div>
-          <h2>This is your input:</h2>
-          <View
-            firstname={this.state.firstname}
-            lastname={this.state.lastname}
-            phonenum={this.state.phonenum}
-            role={this.state.role}
-            message={this.state.message}
-          />
-          <div>
-            <Notes></Notes>
-          </div>
-        </div>
-        {this.state.showPopup && (
-          <Popup
-            firstname={this.state.firstname}
-            lastname={this.state.lastname}
-            phonenum={this.state.phonenum}
-            role={this.state.role}
-            message={this.state.message}
-            handleClose={this.handleClose}
-            handleRefresh={this.handleRefresh}
-          />
-        )}
+  return (
+    <div className="App">
+      <div>
+        <h2>Fill in the form:</h2>
+        <Form changehandler={changeHandler} handleSubmit={handleSubmit} />
       </div>
-    );
-  }
-}
+
+      <div>
+        <h2>This is your input:</h2>
+        <View
+          firstname={state.firstname}
+          lastname={state.lastname}
+          phonenum={state.phonenum}
+          role={state.role}
+          message={state.message}
+        />
+        <div>
+          <Notes></Notes>
+        </div>
+      </div>
+      {showPopup && (
+        <Popup
+          firstname={state.firstname}
+          lastname={state.lastname}
+          phonenum={state.phonenum}
+          role={state.role}
+          message={state.message}
+          handleClose={handleClose}
+          sendData={sendData}
+        />
+      )}
+    </div>
+  );
+};
 
 export default App;

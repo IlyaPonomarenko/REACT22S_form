@@ -1,33 +1,33 @@
 import "./View.css";
 
-const View = (props) => {
+const View = ({firstname, lastname, phonenum, role, message}) => {
   return (
     <div className="container">
       <div className="middle">
         <label>
           {" "}
           First Name:
-          <p>{props.firstname}</p>
+          <p>{firstname}</p>
         </label>
         <label>
           {" "}
           Last Name:
-          <p>{props.lastname}</p>
+          <p>{lastname}</p>
         </label>
         <label>
           {" "}
           Phone Number:
-          <p>{props.phonenum}</p>
+          <p>{phonenum}</p>
         </label>
         <label>
           {" "}
           Role:
-          <p>{props.role}</p>
+          <p>{role}</p>
         </label>
         <label>
           {" "}
           Message
-          <p>{props.message}</p>
+          <p>{message}</p>
         </label>
       </div>
     </div>
