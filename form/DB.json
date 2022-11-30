@@ -1,0 +1,35 @@
+{
+  "notes": [{
+    "id": 1,
+    "firstname": "Ilya",
+    "lastname":"Ponom",
+    "phonenum":"03321414",
+    "role":"student",
+    "message":"textmessage"
+  },
+  {
+    "id": 2,
+    "firstname": "Markus",
+    "lastname":"Puk",
+    "phonenum":"05325434",
+    "role":"teacher",
+    "message":"fsafsafasf"
+  },
+  {
+    "id": 3,
+    "firstname": "Anton",
+    "lastname":"Antonovich",
+    "phonenum":"0754754754",
+    "role":"student",
+    "message":"hewwo"
+  },
+  {
+    "id": 4,
+    "firstname": "Anton",
+    "lastname":"Antonovich",
+    "phonenum":"0754754754",
+    "role":"student",
+    "message":"hewwo"
+  }
+]
+}

@@ -2,6 +2,7 @@ import "./App.css";
 import Form from "./Form";
 import View from "./View";
 import Popup from "./Popup";
+import Notes from "./Notes";
 import React, { Component } from "react";
 class App extends Component {
   state = {
@@ -54,6 +55,9 @@ class App extends Component {
             role={this.state.role}
             message={this.state.message}
           />
+          <div>
+            <Notes></Notes>
+          </div>
         </div>
         {this.state.showPopup && (
           <Popup
