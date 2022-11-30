@@ -36,7 +36,7 @@ const App = () => {
         role: state.role,
         message: state.message,
       })
-      .then((res) => console.log(res))
+      .then(window.location.reload())
       .catch((error) => console.log(error));
   };
 
